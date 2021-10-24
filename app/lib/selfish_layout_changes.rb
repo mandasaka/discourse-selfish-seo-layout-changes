@@ -6,7 +6,7 @@ class SelfishSeoLayoutChanges
       tmp_file = "#{Rails.root}/head_work.tmp.txt"
     end
     head_layout = "#{Rails.root}/app/views/layouts/_head.html.erb"
-    google_site_verification = '<meta name="google-site-verification" content="IRSOCxclhQ3ynQHh5zO2js5hftZ4UYTrk_iImCo5sIg" />' + "\n"
+    google_site_verification = '<meta name="google-site-verification" content="bBvzKkS7PmMFhAfxGGQR8uODDlhONm7GiTvJEnAwccU" />' + "\n"
     if File.readlines(head_layout).grep(/canonical/)&.any?
       IO.write(tmp_file, google_site_verification)
       IO.foreach(head_layout) do |line|
@@ -23,8 +23,8 @@ class SelfishSeoLayoutChanges
       tmp_file = "#{Rails.root}/crawler_work.tmp.txt"
     end
     crawler_layout = "#{Rails.root}/app/views/layouts/crawler.html.erb"
-    if File.readlines(crawler_layout).grep(/www\.unix\.com/)&.empty?
-      powered_by_link = "\s\s\s\s\s\s" + '<p class="powered-by-link">Powered by <a href="https://www.unix.com/">UNIX.com</a>, best viewed with JavaScript enabled.</p>' + "\n"
+    if File.readlines(crawler_layout).grep(/www\.chirpset\.com/)&.empty?
+      powered_by_link = "\s\s\s\s\s\s" + '<p class="powered-by-link">Powered by <a href="https://chirpset.com/">chirpset.com</a>, best viewed with JavaScript enabled.</p>' + "\n"
       if ENV["RAILS_ENV"] == "production"
         tmp_file = "/shared/tmp/crawler_work.tmp.txt"
       else
@@ -44,8 +44,8 @@ class SelfishSeoLayoutChanges
 
   def self.modify_application_layout
     application_layout = "#{Rails.root}/app/views/layouts/application.html.erb"
-    if File.readlines(application_layout).grep(/www\.unix\.com/)&.empty?
-      powered_by_link = "\s\s\s\s\s\s" + '<p class="powered-by-link">Powered by <a href="https://www.unix.com/">UNIX.com</a>, best viewed with JavaScript enabled.</p>' + "\n"
+    if File.readlines(application_layout).grep(/www\.chirpset\.com/)&.empty?
+      powered_by_link = "\s\s\s\s\s\s" + '<p class="powered-by-link">Powered by <a href="https://chirpset.com/">chirpset.com</a>, best viewed with JavaScript enabled.</p>' + "\n"
       if ENV["RAILS_ENV"] == "production"
         tmp_file = "/shared/tmp/application_work.tmp.txt"
       else
