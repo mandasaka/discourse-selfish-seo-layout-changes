@@ -17,6 +17,7 @@ after_initialize do
     SelfishSeoLayoutChanges.modify_head_layout
     SelfishSeoLayoutChanges.modify_crawler_layout
     SelfishSeoLayoutChanges.modify_application_layout
+    SelfishSeoLayoutChanges.modify_footer_layout
     
     require_relative "./app/lib/monkey_patch_topics_controller"
   end
