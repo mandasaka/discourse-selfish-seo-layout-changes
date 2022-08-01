@@ -62,7 +62,6 @@ class SelfishSeoLayoutChanges
       FileUtils.mv(tmp_file, application_layout)
     end
   end
-end
 
   def self.modify_footer_layout
     footer_layout = "#{Rails.root}/app/views/layouts/_noscript_footer.html.erb"
